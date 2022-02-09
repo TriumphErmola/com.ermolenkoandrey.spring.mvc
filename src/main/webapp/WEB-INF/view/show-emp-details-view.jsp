@@ -7,7 +7,11 @@
 <br>
 <br>
 
-Your name : ${nameAttribute}
+Your name : ${employee.name}
+<br><br>
+Your surname : ${employee.surName}
+<br><br>
+Your salary : ${employee.salary}
 
 </body>
 
