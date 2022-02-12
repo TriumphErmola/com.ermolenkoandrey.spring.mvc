@@ -29,6 +29,8 @@ Language(s) :
 
 </ul>
 
+EmpNumber : ${employee.empNumber}
+
 </body>
 
 </html>

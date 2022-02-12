@@ -4,23 +4,24 @@
 <html>
 
 <body>
-
 <h2>Dear Employee, Please enter your details</h2>
-
 <br>
 <br>
 
 <form:form action="showDetails" modelAttribute="employee">
 
     Name <form:input path="name"/>
+    <form:errors path="name"/>
     <br><br>
     Surname <form:input path="surName"/>
+    <form:errors path="surName"/>
     <br><br>
     Salary <form:input path="salary"/>
+    <form:errors path="salary"/>
     <br><br>
     Department <form:select path="department">
     <form:options items="${employee.departments}"/>
-</form:select>
+    </form:select>
     <br><br>
     Which car do you want?
     <form:radiobuttons path="carBrand" items="${employee.carBrands}"/>
@@ -29,6 +30,9 @@
     EN<form:checkbox path="languages" value="English"/>
     RU<form:checkbox path="languages" value="Russian"/>
     DE<form:checkbox path="languages" value="Deuth"/>
+    <br><br>
+    EmpNumber <form:input path="empNumber"/>
+    <form:errors path="empNumber"/>
     <br><br>
     <input type="submit" value="OK">
 </form:form>

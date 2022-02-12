@@ -1,18 +1,28 @@
 package com.ermolenkoandrey.spring.mvc;
 
+
+import jakarta.validation.constraints.*;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
 
+    @Size(min = 2, message = "Минимум 2 знака")
     private String name;
+    @NotBlank(message = "Это обязательное поле")
     private String surName;
+    @Min(value = 500, message = "Не меньше 499")
+    @Max(value = 1000, message = "Не больше 1001")
     private int salary;
     private String department;
     private String carBrand;
     private Map<String, String> carBrands;
     private String[] languages;
     private Map<String, String> departments;
+
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}",message = "Плиз юзай шаблон номера ХХХ-ХХ-ХХ")
+    private String empNumber;
 
 
     public Employee() {
@@ -28,6 +38,13 @@ public class Employee {
 
     }
 
+    public String getEmpNumber() {
+        return empNumber;
+    }
+
+    public void setEmpNumber(String empNumber) {
+        this.empNumber = empNumber;
+    }
 
     public String[] getLanguages() {
         return languages;
